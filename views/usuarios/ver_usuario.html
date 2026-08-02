@@ -1,0 +1,21 @@
+$def with(item)
+$if item == {}:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_usuarios"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <h1>Usuario</h1>
+    <table class="table table-bordered w-auto">
+        <tr><th>ID</th><td>$item['id_usuario']</td></tr>
+        <tr><th>Nombre</th><td>$item['nombre']</td></tr>
+        <tr><th>Apellido paterno</th><td>$item['apellido_paterno']</td></tr>
+        <tr><th>Apellido materno</th><td>$item['apellido_materno']</td></tr>
+        <tr><th>Dirección</th><td>$item['direccion']</td></tr>
+        <tr><th>Teléfono</th><td>$item['telefono']</td></tr>
+        <tr><th>Correo</th><td>$item['correo']</td></tr>
+        <tr><th>Contraseña</th><td>$item['contrasena']</td></tr>
+        <tr><th>Estado (1 activo / 0 inactivo)</th><td>$item['estado']</td></tr>
+        <tr><th>ID Rol</th><td>$item['id_rol']</td></tr>
+    </table>
+    <a href="/lista_usuarios"><button type="button" class="btn btn-secondary">Regresar</button></a>
+    <a href="/editar_usuario/$item['id_usuario']"><button type="button" class="btn btn-warning">Editar</button></a>
+    <a href="/borrar_usuario/$item['id_usuario']"><button type="button" class="btn btn-danger">Borrar</button></a>

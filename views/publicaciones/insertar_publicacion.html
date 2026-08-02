@@ -1,0 +1,29 @@
+$def with()
+<h1>Insertar Publicación</h1>
+
+<form method="POST">
+    <div class="mb-3">
+        <label class="form-label" for="id_usuario">ID Usuario:</label>
+        <input type="number" class="form-control" id="id_usuario" name="id_usuario">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="titulo">Título:</label>
+        <input type="text" class="form-control" id="titulo" name="titulo">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="contenido">Contenido:</label>
+        <input type="text" class="form-control" id="contenido" name="contenido">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="categoria">Categoría:</label>
+        <input type="text" class="form-control" id="categoria" name="categoria">
+    </div>
+
+    <div class="mb-3">
+        <a href="/lista_publicaciones"><button type="button" class="btn btn-secondary">Regresar</button></a>
+        <button type="submit" name="insertar" value="insertar" class="btn btn-primary">Insertar</button>
+    </div>
+</form>

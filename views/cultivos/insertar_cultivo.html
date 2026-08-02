@@ -1,0 +1,34 @@
+$def with()
+<h1>Insertar Cultivo</h1>
+
+<form method="POST">
+    <div class="mb-3">
+        <label class="form-label" for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="descripcion">Descripción:</label>
+        <input type="text" class="form-control" id="descripcion" name="descripcion">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="temporada">Temporada:</label>
+        <input type="text" class="form-control" id="temporada" name="temporada">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="recomendaciones">Recomendaciones:</label>
+        <input type="text" class="form-control" id="recomendaciones" name="recomendaciones">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="caracteristicas">Características:</label>
+        <input type="text" class="form-control" id="caracteristicas" name="caracteristicas">
+    </div>
+
+    <div class="mb-3">
+        <a href="/lista_cultivos"><button type="button" class="btn btn-secondary">Regresar</button></a>
+        <button type="submit" name="insertar" value="insertar" class="btn btn-primary">Insertar</button>
+    </div>
+</form>

@@ -1,0 +1,34 @@
+$def with()
+<h1>Insertar Turno de riego</h1>
+
+<form method="POST">
+    <div class="mb-3">
+        <label class="form-label" for="fecha">Fecha:</label>
+        <input type="date" class="form-control" id="fecha" name="fecha">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="hora_inicio">Hora inicio:</label>
+        <input type="time" class="form-control" id="hora_inicio" name="hora_inicio">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="hora_fin">Hora fin:</label>
+        <input type="time" class="form-control" id="hora_fin" name="hora_fin">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="id_area">ID Área:</label>
+        <input type="number" class="form-control" id="id_area" name="id_area">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="estado">Estado:</label>
+        <input type="text" class="form-control" id="estado" name="estado">
+    </div>
+
+    <div class="mb-3">
+        <a href="/lista_turnos_riego"><button type="button" class="btn btn-secondary">Regresar</button></a>
+        <button type="submit" name="insertar" value="insertar" class="btn btn-primary">Insertar</button>
+    </div>
+</form>

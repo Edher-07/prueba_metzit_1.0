@@ -1,0 +1,19 @@
+$def with()
+<h1>Insertar Rol</h1>
+
+<form method="POST">
+    <div class="mb-3">
+        <label class="form-label" for="nombre_rol">Nombre del rol:</label>
+        <input type="text" class="form-control" id="nombre_rol" name="nombre_rol">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="descripcion">Descripción:</label>
+        <input type="text" class="form-control" id="descripcion" name="descripcion">
+    </div>
+
+    <div class="mb-3">
+        <a href="/lista_roles"><button type="button" class="btn btn-secondary">Regresar</button></a>
+        <button type="submit" name="insertar" value="insertar" class="btn btn-primary">Insertar</button>
+    </div>
+</form>

@@ -1,0 +1,14 @@
+$def with(item)
+$if item == {}:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_roles"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <h1>Rol</h1>
+    <table class="table table-bordered w-auto">
+        <tr><th>ID</th><td>$item['id_rol']</td></tr>
+        <tr><th>Nombre del rol</th><td>$item['nombre_rol']</td></tr>
+        <tr><th>Descripción</th><td>$item['descripcion']</td></tr>
+    </table>
+    <a href="/lista_roles"><button type="button" class="btn btn-secondary">Regresar</button></a>
+    <a href="/editar_rol/$item['id_rol']"><button type="button" class="btn btn-warning">Editar</button></a>
+    <a href="/borrar_rol/$item['id_rol']"><button type="button" class="btn btn-danger">Borrar</button></a>

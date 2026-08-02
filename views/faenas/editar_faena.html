@@ -1,0 +1,42 @@
+$def with(item)
+$if item is None:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_faenas"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <h1>Editar Faena</h1>
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label" for="id_usuario">ID Usuario responsable:</label>
+            <input type="number" class="form-control" id="id_usuario" name="id_usuario" value="$item['id_usuario']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="descripcion">Descripción:</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion" value="$item['descripcion']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="fecha">Fecha:</label>
+            <input type="date" class="form-control" id="fecha" name="fecha" value="$item['fecha']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="hora">Hora:</label>
+            <input type="time" class="form-control" id="hora" name="hora" value="$item['hora']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="limite_fecha">Fecha límite:</label>
+            <input type="date" class="form-control" id="limite_fecha" name="limite_fecha" value="$item['limite_fecha']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="multa">Multa:</label>
+            <input type="number" class="form-control" id="multa" name="multa" value="$item['multa']">
+        </div>
+
+        <div class="mb-3">
+            <a href="/ver_faena/$item['id_faena']"><button type="button" class="btn btn-secondary">Regresar</button></a>
+            <button type="submit" name="editar" value="editar" class="btn btn-primary">Guardar cambios</button>
+        </div>
+    </form>

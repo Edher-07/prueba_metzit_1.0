@@ -1,0 +1,22 @@
+$def with(item)
+$if item is None:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_roles"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <h1>Editar Rol</h1>
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label" for="nombre_rol">Nombre del rol:</label>
+            <input type="text" class="form-control" id="nombre_rol" name="nombre_rol" value="$item['nombre_rol']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="descripcion">Descripción:</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion" value="$item['descripcion']">
+        </div>
+
+        <div class="mb-3">
+            <a href="/ver_rol/$item['id_rol']"><button type="button" class="btn btn-secondary">Regresar</button></a>
+            <button type="submit" name="editar" value="editar" class="btn btn-primary">Guardar cambios</button>
+        </div>
+    </form>

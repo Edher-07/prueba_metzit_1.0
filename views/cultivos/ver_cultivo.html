@@ -1,0 +1,17 @@
+$def with(item)
+$if item == {}:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_cultivos"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <h1>Cultivo</h1>
+    <table class="table table-bordered w-auto">
+        <tr><th>ID</th><td>$item['id_cultivo']</td></tr>
+        <tr><th>Nombre</th><td>$item['nombre']</td></tr>
+        <tr><th>Descripción</th><td>$item['descripcion']</td></tr>
+        <tr><th>Temporada</th><td>$item['temporada']</td></tr>
+        <tr><th>Recomendaciones</th><td>$item['recomendaciones']</td></tr>
+        <tr><th>Características</th><td>$item['caracteristicas']</td></tr>
+    </table>
+    <a href="/lista_cultivos"><button type="button" class="btn btn-secondary">Regresar</button></a>
+    <a href="/editar_cultivo/$item['id_cultivo']"><button type="button" class="btn btn-warning">Editar</button></a>
+    <a href="/borrar_cultivo/$item['id_cultivo']"><button type="button" class="btn btn-danger">Borrar</button></a>

@@ -1,0 +1,24 @@
+$def with(item, mensaje)
+<h1>Borrar Participante</h1>
+
+$if mensaje is not None:
+    <div class="alert alert-danger">$mensaje</div>
+
+$if item == {}:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_participantes"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <p>¿Confirmas que deseas borrar el siguiente registro?</p>
+    <table class="table table-bordered w-auto">
+        <tr><th>ID</th><td><input type="text" class="form-control" value="$item['id_participante']" readonly></td></tr>
+        <tr><th>ID Usuario</th><td><input type="text" class="form-control" value="$item['id_usuario']" readonly></td></tr>
+        <tr><th>ID Faena</th><td><input type="text" class="form-control" value="$item['id_faena']" readonly></td></tr>
+        <tr><th>Asistencia (1/0)</th><td><input type="text" class="form-control" value="$item['asistencia']" readonly></td></tr>
+        <tr><th>Representante (1/0)</th><td><input type="text" class="form-control" value="$item['representante']" readonly></td></tr>
+        <tr><th>Multa aplicada</th><td><input type="text" class="form-control" value="$item['multa_aplicada']" readonly></td></tr>
+        <tr><th>Observaciones</th><td><input type="text" class="form-control" value="$item['observaciones']" readonly></td></tr>
+    </table>
+    <form method="POST">
+        <a href="/lista_participantes"><button type="button" class="btn btn-secondary">Regresar</button></a>
+        <button type="submit" name="borrar" value="borrar" class="btn btn-danger">Borrar</button>
+    </form>

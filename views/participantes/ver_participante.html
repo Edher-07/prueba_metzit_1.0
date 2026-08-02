@@ -1,0 +1,18 @@
+$def with(item)
+$if item == {}:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_participantes"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <h1>Participante</h1>
+    <table class="table table-bordered w-auto">
+        <tr><th>ID</th><td>$item['id_participante']</td></tr>
+        <tr><th>ID Usuario</th><td>$item['id_usuario']</td></tr>
+        <tr><th>ID Faena</th><td>$item['id_faena']</td></tr>
+        <tr><th>Asistencia (1/0)</th><td>$item['asistencia']</td></tr>
+        <tr><th>Representante (1/0)</th><td>$item['representante']</td></tr>
+        <tr><th>Multa aplicada</th><td>$item['multa_aplicada']</td></tr>
+        <tr><th>Observaciones</th><td>$item['observaciones']</td></tr>
+    </table>
+    <a href="/lista_participantes"><button type="button" class="btn btn-secondary">Regresar</button></a>
+    <a href="/editar_participante/$item['id_participante']"><button type="button" class="btn btn-warning">Editar</button></a>
+    <a href="/borrar_participante/$item['id_participante']"><button type="button" class="btn btn-danger">Borrar</button></a>

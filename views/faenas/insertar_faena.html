@@ -1,0 +1,39 @@
+$def with()
+<h1>Insertar Faena</h1>
+
+<form method="POST">
+    <div class="mb-3">
+        <label class="form-label" for="id_usuario">ID Usuario responsable:</label>
+        <input type="number" class="form-control" id="id_usuario" name="id_usuario">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="descripcion">Descripción:</label>
+        <input type="text" class="form-control" id="descripcion" name="descripcion">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="fecha">Fecha:</label>
+        <input type="date" class="form-control" id="fecha" name="fecha">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="hora">Hora:</label>
+        <input type="time" class="form-control" id="hora" name="hora">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="limite_fecha">Fecha límite:</label>
+        <input type="date" class="form-control" id="limite_fecha" name="limite_fecha">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="multa">Multa:</label>
+        <input type="number" class="form-control" id="multa" name="multa">
+    </div>
+
+    <div class="mb-3">
+        <a href="/lista_faenas"><button type="button" class="btn btn-secondary">Regresar</button></a>
+        <button type="submit" name="insertar" value="insertar" class="btn btn-primary">Insertar</button>
+    </div>
+</form>

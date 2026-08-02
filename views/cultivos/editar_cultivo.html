@@ -1,0 +1,37 @@
+$def with(item)
+$if item is None:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_cultivos"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <h1>Editar Cultivo</h1>
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label" for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="$item['nombre']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="descripcion">Descripción:</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion" value="$item['descripcion']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="temporada">Temporada:</label>
+            <input type="text" class="form-control" id="temporada" name="temporada" value="$item['temporada']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="recomendaciones">Recomendaciones:</label>
+            <input type="text" class="form-control" id="recomendaciones" name="recomendaciones" value="$item['recomendaciones']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="caracteristicas">Características:</label>
+            <input type="text" class="form-control" id="caracteristicas" name="caracteristicas" value="$item['caracteristicas']">
+        </div>
+
+        <div class="mb-3">
+            <a href="/ver_cultivo/$item['id_cultivo']"><button type="button" class="btn btn-secondary">Regresar</button></a>
+            <button type="submit" name="editar" value="editar" class="btn btn-primary">Guardar cambios</button>
+        </div>
+    </form>

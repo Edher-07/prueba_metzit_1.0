@@ -1,0 +1,42 @@
+$def with(item)
+$if item is None:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_participantes"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <h1>Editar Participante</h1>
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label" for="id_usuario">ID Usuario:</label>
+            <input type="number" class="form-control" id="id_usuario" name="id_usuario" value="$item['id_usuario']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="id_faena">ID Faena:</label>
+            <input type="number" class="form-control" id="id_faena" name="id_faena" value="$item['id_faena']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="asistencia">Asistencia (1/0):</label>
+            <input type="text" class="form-control" id="asistencia" name="asistencia" value="$item['asistencia']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="representante">Representante (1/0):</label>
+            <input type="text" class="form-control" id="representante" name="representante" value="$item['representante']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="multa_aplicada">Multa aplicada:</label>
+            <input type="number" class="form-control" id="multa_aplicada" name="multa_aplicada" value="$item['multa_aplicada']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="observaciones">Observaciones:</label>
+            <input type="text" class="form-control" id="observaciones" name="observaciones" value="$item['observaciones']">
+        </div>
+
+        <div class="mb-3">
+            <a href="/ver_participante/$item['id_participante']"><button type="button" class="btn btn-secondary">Regresar</button></a>
+            <button type="submit" name="editar" value="editar" class="btn btn-primary">Guardar cambios</button>
+        </div>
+    </form>

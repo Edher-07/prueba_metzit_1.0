@@ -1,0 +1,32 @@
+$def with(item)
+$if item is None:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_notificaciones"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <h1>Editar Notificación</h1>
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label" for="id_usuario">ID Usuario:</label>
+            <input type="number" class="form-control" id="id_usuario" name="id_usuario" value="$item['id_usuario']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="titulo">Título:</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" value="$item['titulo']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="mensaje">Mensaje:</label>
+            <input type="text" class="form-control" id="mensaje" name="mensaje" value="$item['mensaje']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="leida">Leída (1/0):</label>
+            <input type="text" class="form-control" id="leida" name="leida" value="$item['leida']">
+        </div>
+
+        <div class="mb-3">
+            <a href="/ver_notificacion/$item['id_notificacion']"><button type="button" class="btn btn-secondary">Regresar</button></a>
+            <button type="submit" name="editar" value="editar" class="btn btn-primary">Guardar cambios</button>
+        </div>
+    </form>

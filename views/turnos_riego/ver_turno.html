@@ -1,0 +1,17 @@
+$def with(item)
+$if item == {}:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_turnos_riego"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <h1>Turno de riego</h1>
+    <table class="table table-bordered w-auto">
+        <tr><th>ID</th><td>$item['id_turno']</td></tr>
+        <tr><th>Fecha</th><td>$item['fecha']</td></tr>
+        <tr><th>Hora inicio</th><td>$item['hora_inicio']</td></tr>
+        <tr><th>Hora fin</th><td>$item['hora_fin']</td></tr>
+        <tr><th>ID Área</th><td>$item['id_area']</td></tr>
+        <tr><th>Estado</th><td>$item['estado']</td></tr>
+    </table>
+    <a href="/lista_turnos_riego"><button type="button" class="btn btn-secondary">Regresar</button></a>
+    <a href="/editar_turno/$item['id_turno']"><button type="button" class="btn btn-warning">Editar</button></a>
+    <a href="/borrar_turno/$item['id_turno']"><button type="button" class="btn btn-danger">Borrar</button></a>

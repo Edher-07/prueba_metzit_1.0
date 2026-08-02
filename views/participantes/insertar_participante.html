@@ -1,0 +1,39 @@
+$def with()
+<h1>Insertar Participante</h1>
+
+<form method="POST">
+    <div class="mb-3">
+        <label class="form-label" for="id_usuario">ID Usuario:</label>
+        <input type="number" class="form-control" id="id_usuario" name="id_usuario">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="id_faena">ID Faena:</label>
+        <input type="number" class="form-control" id="id_faena" name="id_faena">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="asistencia">Asistencia (1/0):</label>
+        <input type="text" class="form-control" id="asistencia" name="asistencia">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="representante">Representante (1/0):</label>
+        <input type="text" class="form-control" id="representante" name="representante">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="multa_aplicada">Multa aplicada:</label>
+        <input type="number" class="form-control" id="multa_aplicada" name="multa_aplicada">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="observaciones">Observaciones:</label>
+        <input type="text" class="form-control" id="observaciones" name="observaciones">
+    </div>
+
+    <div class="mb-3">
+        <a href="/lista_participantes"><button type="button" class="btn btn-secondary">Regresar</button></a>
+        <button type="submit" name="insertar" value="insertar" class="btn btn-primary">Insertar</button>
+    </div>
+</form>

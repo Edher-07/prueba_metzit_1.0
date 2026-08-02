@@ -1,0 +1,18 @@
+$def with(item)
+$if item == {}:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_faenas"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <h1>Faena</h1>
+    <table class="table table-bordered w-auto">
+        <tr><th>ID</th><td>$item['id_faena']</td></tr>
+        <tr><th>ID Usuario responsable</th><td>$item['id_usuario']</td></tr>
+        <tr><th>Descripción</th><td>$item['descripcion']</td></tr>
+        <tr><th>Fecha</th><td>$item['fecha']</td></tr>
+        <tr><th>Hora</th><td>$item['hora']</td></tr>
+        <tr><th>Fecha límite</th><td>$item['limite_fecha']</td></tr>
+        <tr><th>Multa</th><td>$item['multa']</td></tr>
+    </table>
+    <a href="/lista_faenas"><button type="button" class="btn btn-secondary">Regresar</button></a>
+    <a href="/editar_faena/$item['id_faena']"><button type="button" class="btn btn-warning">Editar</button></a>
+    <a href="/borrar_faena/$item['id_faena']"><button type="button" class="btn btn-danger">Borrar</button></a>

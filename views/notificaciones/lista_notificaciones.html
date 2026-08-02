@@ -1,0 +1,34 @@
+$def with(datos)
+<h1>Notificaciones</h1>
+
+<a href="/insertar_notificacion"><button type="button" class="btn btn-primary mb-3">Agregar Notificación</button></a>
+
+<table class="table table-striped table-bordered align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>ID Usuario</th>
+            <th>Título</th>
+            <th>Mensaje</th>
+            <th>Leída (1/0)</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    $for item in datos:
+        <tr>
+            <td>$item['id_notificacion']</td>
+            <td>$item['id_usuario']</td>
+            <td>$item['titulo']</td>
+            <td>$item['mensaje']</td>
+            <td>$item['leida']</td>
+            <td>
+                <a href="/ver_notificacion/$item['id_notificacion']"><button type="button" class="btn btn-info btn-sm">Ver</button></a>
+                <a href="/editar_notificacion/$item['id_notificacion']"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
+                <a href="/borrar_notificacion/$item['id_notificacion']"><button type="button" class="btn btn-danger btn-sm">Borrar</button></a>
+            </td>
+        </tr>
+    $if not datos:
+        <tr><td colspan="6">No hay registros.</td></tr>
+    </tbody>
+</table>

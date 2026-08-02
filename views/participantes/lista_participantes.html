@@ -1,0 +1,38 @@
+$def with(datos)
+<h1>Participantes</h1>
+
+<a href="/insertar_participante"><button type="button" class="btn btn-primary mb-3">Agregar Participante</button></a>
+
+<table class="table table-striped table-bordered align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>ID Usuario</th>
+            <th>ID Faena</th>
+            <th>Asistencia (1/0)</th>
+            <th>Representante (1/0)</th>
+            <th>Multa aplicada</th>
+            <th>Observaciones</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    $for item in datos:
+        <tr>
+            <td>$item['id_participante']</td>
+            <td>$item['id_usuario']</td>
+            <td>$item['id_faena']</td>
+            <td>$item['asistencia']</td>
+            <td>$item['representante']</td>
+            <td>$item['multa_aplicada']</td>
+            <td>$item['observaciones']</td>
+            <td>
+                <a href="/ver_participante/$item['id_participante']"><button type="button" class="btn btn-info btn-sm">Ver</button></a>
+                <a href="/editar_participante/$item['id_participante']"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
+                <a href="/borrar_participante/$item['id_participante']"><button type="button" class="btn btn-danger btn-sm">Borrar</button></a>
+            </td>
+        </tr>
+    $if not datos:
+        <tr><td colspan="8">No hay registros.</td></tr>
+    </tbody>
+</table>

@@ -1,0 +1,38 @@
+$def with(datos)
+<h1>Faenas</h1>
+
+<a href="/insertar_faena"><button type="button" class="btn btn-primary mb-3">Agregar Faena</button></a>
+
+<table class="table table-striped table-bordered align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>ID Usuario responsable</th>
+            <th>Descripción</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Fecha límite</th>
+            <th>Multa</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    $for item in datos:
+        <tr>
+            <td>$item['id_faena']</td>
+            <td>$item['id_usuario']</td>
+            <td>$item['descripcion']</td>
+            <td>$item['fecha']</td>
+            <td>$item['hora']</td>
+            <td>$item['limite_fecha']</td>
+            <td>$item['multa']</td>
+            <td>
+                <a href="/ver_faena/$item['id_faena']"><button type="button" class="btn btn-info btn-sm">Ver</button></a>
+                <a href="/editar_faena/$item['id_faena']"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
+                <a href="/borrar_faena/$item['id_faena']"><button type="button" class="btn btn-danger btn-sm">Borrar</button></a>
+            </td>
+        </tr>
+    $if not datos:
+        <tr><td colspan="8">No hay registros.</td></tr>
+    </tbody>
+</table>

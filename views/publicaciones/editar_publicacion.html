@@ -1,0 +1,32 @@
+$def with(item)
+$if item is None:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_publicaciones"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <h1>Editar Publicación</h1>
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label" for="id_usuario">ID Usuario:</label>
+            <input type="number" class="form-control" id="id_usuario" name="id_usuario" value="$item['id_usuario']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="titulo">Título:</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" value="$item['titulo']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="contenido">Contenido:</label>
+            <input type="text" class="form-control" id="contenido" name="contenido" value="$item['contenido']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="categoria">Categoría:</label>
+            <input type="text" class="form-control" id="categoria" name="categoria" value="$item['categoria']">
+        </div>
+
+        <div class="mb-3">
+            <a href="/ver_publicacion/$item['id_publicacion']"><button type="button" class="btn btn-secondary">Regresar</button></a>
+            <button type="submit" name="editar" value="editar" class="btn btn-primary">Guardar cambios</button>
+        </div>
+    </form>

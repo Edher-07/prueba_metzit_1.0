@@ -1,0 +1,37 @@
+$def with(item)
+$if item is None:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_turnos_riego"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <h1>Editar Turno de riego</h1>
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label" for="fecha">Fecha:</label>
+            <input type="date" class="form-control" id="fecha" name="fecha" value="$item['fecha']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="hora_inicio">Hora inicio:</label>
+            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" value="$item['hora_inicio']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="hora_fin">Hora fin:</label>
+            <input type="time" class="form-control" id="hora_fin" name="hora_fin" value="$item['hora_fin']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="id_area">ID Área:</label>
+            <input type="number" class="form-control" id="id_area" name="id_area" value="$item['id_area']">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="estado">Estado:</label>
+            <input type="text" class="form-control" id="estado" name="estado" value="$item['estado']">
+        </div>
+
+        <div class="mb-3">
+            <a href="/ver_turno/$item['id_turno']"><button type="button" class="btn btn-secondary">Regresar</button></a>
+            <button type="submit" name="editar" value="editar" class="btn btn-primary">Guardar cambios</button>
+        </div>
+    </form>

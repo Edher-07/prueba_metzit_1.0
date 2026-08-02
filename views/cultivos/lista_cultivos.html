@@ -1,0 +1,36 @@
+$def with(datos)
+<h1>Cultivos</h1>
+
+<a href="/insertar_cultivo"><button type="button" class="btn btn-primary mb-3">Agregar Cultivo</button></a>
+
+<table class="table table-striped table-bordered align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Temporada</th>
+            <th>Recomendaciones</th>
+            <th>Características</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    $for item in datos:
+        <tr>
+            <td>$item['id_cultivo']</td>
+            <td>$item['nombre']</td>
+            <td>$item['descripcion']</td>
+            <td>$item['temporada']</td>
+            <td>$item['recomendaciones']</td>
+            <td>$item['caracteristicas']</td>
+            <td>
+                <a href="/ver_cultivo/$item['id_cultivo']"><button type="button" class="btn btn-info btn-sm">Ver</button></a>
+                <a href="/editar_cultivo/$item['id_cultivo']"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
+                <a href="/borrar_cultivo/$item['id_cultivo']"><button type="button" class="btn btn-danger btn-sm">Borrar</button></a>
+            </td>
+        </tr>
+    $if not datos:
+        <tr><td colspan="7">No hay registros.</td></tr>
+    </tbody>
+</table>

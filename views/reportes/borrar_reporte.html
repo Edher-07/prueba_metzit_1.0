@@ -1,0 +1,22 @@
+$def with(item, mensaje)
+<h1>Borrar Reporte</h1>
+
+$if mensaje is not None:
+    <div class="alert alert-danger">$mensaje</div>
+
+$if item == {}:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_reportes"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <p>¿Confirmas que deseas borrar el siguiente registro?</p>
+    <table class="table table-bordered w-auto">
+        <tr><th>ID</th><td><input type="text" class="form-control" value="$item['id_reporte']" readonly></td></tr>
+        <tr><th>ID Usuario</th><td><input type="text" class="form-control" value="$item['id_usuario']" readonly></td></tr>
+        <tr><th>Título</th><td><input type="text" class="form-control" value="$item['titulo']" readonly></td></tr>
+        <tr><th>Descripción</th><td><input type="text" class="form-control" value="$item['descripcion']" readonly></td></tr>
+        <tr><th>Estado</th><td><input type="text" class="form-control" value="$item['estado']" readonly></td></tr>
+    </table>
+    <form method="POST">
+        <a href="/lista_reportes"><button type="button" class="btn btn-secondary">Regresar</button></a>
+        <button type="submit" name="borrar" value="borrar" class="btn btn-danger">Borrar</button>
+    </form>

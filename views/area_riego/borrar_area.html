@@ -1,0 +1,21 @@
+$def with(item, mensaje)
+<h1>Borrar Área de riego</h1>
+
+$if mensaje is not None:
+    <div class="alert alert-danger">$mensaje</div>
+
+$if item == {}:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_area_riego"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <p>¿Confirmas que deseas borrar el siguiente registro?</p>
+    <table class="table table-bordered w-auto">
+        <tr><th>ID</th><td><input type="text" class="form-control" value="$item['id_area']" readonly></td></tr>
+        <tr><th>Nombre del área</th><td><input type="text" class="form-control" value="$item['nombre']" readonly></td></tr>
+        <tr><th>¿Nivel suficiente? (1/0)</th><td><input type="text" class="form-control" value="$item['suficiente']" readonly></td></tr>
+        <tr><th>Ubicación</th><td><input type="text" class="form-control" value="$item['ubicacion']" readonly></td></tr>
+    </table>
+    <form method="POST">
+        <a href="/lista_area_riego"><button type="button" class="btn btn-secondary">Regresar</button></a>
+        <button type="submit" name="borrar" value="borrar" class="btn btn-danger">Borrar</button>
+    </form>

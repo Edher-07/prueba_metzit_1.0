@@ -1,0 +1,32 @@
+$def with(datos)
+<h1>Áreas de riego</h1>
+
+<a href="/insertar_area"><button type="button" class="btn btn-primary mb-3">Agregar Área de riego</button></a>
+
+<table class="table table-striped table-bordered align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nombre del área</th>
+            <th>¿Nivel suficiente? (1/0)</th>
+            <th>Ubicación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    $for item in datos:
+        <tr>
+            <td>$item['id_area']</td>
+            <td>$item['nombre']</td>
+            <td>$item['suficiente']</td>
+            <td>$item['ubicacion']</td>
+            <td>
+                <a href="/ver_area/$item['id_area']"><button type="button" class="btn btn-info btn-sm">Ver</button></a>
+                <a href="/editar_area/$item['id_area']"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
+                <a href="/borrar_area/$item['id_area']"><button type="button" class="btn btn-danger btn-sm">Borrar</button></a>
+            </td>
+        </tr>
+    $if not datos:
+        <tr><td colspan="5">No hay registros.</td></tr>
+    </tbody>
+</table>

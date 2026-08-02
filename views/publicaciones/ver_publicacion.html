@@ -1,0 +1,16 @@
+$def with(item)
+$if item == {}:
+    <h1>Ups, no existe este registro</h1>
+    <a href="/lista_publicaciones"><button type="button" class="btn btn-secondary">Regresar</button></a>
+$else:
+    <h1>Publicación</h1>
+    <table class="table table-bordered w-auto">
+        <tr><th>ID</th><td>$item['id_publicacion']</td></tr>
+        <tr><th>ID Usuario</th><td>$item['id_usuario']</td></tr>
+        <tr><th>Título</th><td>$item['titulo']</td></tr>
+        <tr><th>Contenido</th><td>$item['contenido']</td></tr>
+        <tr><th>Categoría</th><td>$item['categoria']</td></tr>
+    </table>
+    <a href="/lista_publicaciones"><button type="button" class="btn btn-secondary">Regresar</button></a>
+    <a href="/editar_publicacion/$item['id_publicacion']"><button type="button" class="btn btn-warning">Editar</button></a>
+    <a href="/borrar_publicacion/$item['id_publicacion']"><button type="button" class="btn btn-danger">Borrar</button></a>
