@@ -15,12 +15,6 @@ urls = (
     '/editar_usuario/(.*)', 'controllers.usuarios.editar_usuario.EditarUsuario',
     '/borrar_usuario/(.*)', 'controllers.usuarios.borrar_usuario.BorrarUsuario',
 
-    '/lista_area_riego', 'controllers.area_riego.lista_area_riego.ListaArea',
-    '/insertar_area', 'controllers.area_riego.insertar_area.InsertarArea',
-    '/ver_area/(.*)', 'controllers.area_riego.ver_area.VerArea',
-    '/editar_area/(.*)', 'controllers.area_riego.editar_area.EditarArea',
-    '/borrar_area/(.*)', 'controllers.area_riego.borrar_area.BorrarArea',
-
     '/lista_turnos_riego', 'controllers.turnos_riego.lista_turnos_riego.ListaTurno',
     '/insertar_turno', 'controllers.turnos_riego.insertar_turno.InsertarTurno',
     '/ver_turno/(.*)', 'controllers.turnos_riego.ver_turno.VerTurno',

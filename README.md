@@ -1,12 +1,4 @@
-# Metzit — Agua y Pueblo 💧
-
-Aplicación web para la gestión del agua de riego en la comunidad de **San Bartolo (La Barranca)**,
-municipio de Acatlán, Hidalgo. Desarrollada como prototipo funcional con fines académicos
-(Tecnologías de la Información e Innovación Digital — UT Tulancingo).
-
-Este repositorio sigue la misma arquitectura y convenciones del proyecto de referencia
-(`agenda_tic31`): **web.py** + **SQLite** + patrón `controllers/` (lógica) y `views/` (plantillas
-Templetor), un archivo por acción.
+# Metzit — Agua y Pueblo 
 
 ## Estructura del proyecto
 

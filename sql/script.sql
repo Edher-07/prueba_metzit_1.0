@@ -132,14 +132,8 @@ INSERT INTO roles(nombre_rol, descripcion) VALUES
 INSERT INTO usuarios(nombre, apellido_paterno, apellido_materno, direccion, telefono, correo, contrasena, estado, id_rol)
 VALUES
 ('Manuel', 'Ramiro', 'Soto', 'San Bartolo, La Barranca', '7711234567', 'manuel@metzit.com', '12345', 1, 2),
-('Eric', 'Carrillo', 'García', 'San Bartolo, La Barranca', '7717654321', 'eric@metzit.com', '12345', 1, 1),
-('Edher', 'González', 'Osorio', 'San Bartolo, La Barranca', '7719876543', 'edher@metzit.com', '12345', 1, 3);
 
-INSERT INTO area_riego(nombre, suficiente, ubicacion) VALUES
-('Zona Norte', 1, 'Ladera norte de la comunidad'),
-('Zona Sur', 0, 'Cercana al río, ladera sur');
-
-INSERT INTO turnos_riego(fecha, hora_inicio, hora_fin, id_area, estado) VALUES
+INSERT INTO turnos_riego(fecha, hora_inicio, hora_fin, estado) VALUES
 ('2026-08-05', '06:00', '08:00', 1, 'Programado'),
 ('2026-08-05', '08:00', '10:00', 2, 'Programado');
 
